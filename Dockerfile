@@ -13,13 +13,14 @@ RUN set -o errexit -o nounset \
         && apt-get install -yq python3 python3-pip python3-venv
 
 RUN set -o errexit -o nounset \
-        && echo "Installing Yarn" \
+        && echo "Installing Yarn, npm" \
         && apt-get update -yq \
-        && apt-get install -yq curl gnupg \
+        && apt-get install -yq curl gnupg npm \
         && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
         && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
         && apt-get update -yq \
-        && apt-get install -yq yarn
+        && apt-get install -yq yarn \
+        && npm install npm@latest -g
 
 RUN set -o errexit -o nounset \
         && echo "Installing geospatial libraries" \
