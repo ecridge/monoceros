@@ -31,7 +31,7 @@ RUN set -o errexit -o nounset \
         && echo "Installing command line tools" \
         && apt-get update -yq \
         && apt-get install -yq zip \
-        && pip3 install awscli
+        && pip3 install awscli requests
 
 RUN useradd -m bitbucket
 USER bitbucket
