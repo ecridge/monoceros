@@ -23,9 +23,9 @@ RUN set -o errexit -o nounset \
         && npm install npm@latest -g
 
 RUN set -o errexit -o nounset \
-        && echo "Installing geospatial libraries" \
+        && echo "Installing libraries" \
         && apt-get update -yq \
-        && apt-get install -yq binutils libproj-dev gdal-bin
+        && apt-get install -yq binutils libpq-dev libproj-dev gdal-bin
 
 RUN set -o errexit -o nounset \
         && echo "Installing command line tools" \
